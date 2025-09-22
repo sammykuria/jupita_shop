@@ -100,14 +100,18 @@ function ShopNow() {
             {
                 filteredproducts.map(product=>(
                     <div key={product.id} className='card'>
-                        <div className='heart'>
+                        <Link to={`/details/${product.id}`}>
+
+                                               <div className='heart'>
                             <i
                             className={`fa-heart ${liked ? "fa-solid liked" : "fa-regular"}`}
                             onClick={() => setLiked(!liked)}
                             ></i>
                         </div>
                         <div className='image-box'>
-                        <img className='productimg' src={product.image} alt='yoo'></img>
+                            <Link to={`/details/${product.id}`}>
+                                 <img className='productimg' src={product.image} alt='yoo'></img>
+                            </Link>
                          </div>
 
                          <div className='producttext'>
@@ -120,6 +124,8 @@ function ShopNow() {
                             <p><strong>Rating:</strong> {product.rating?.rate} ⭐</p>
                             <p><strong>Reviews:</strong> {product.rating?.count}</p>
  */}
+                        </Link>
+ 
                      
                     </div>
                 ))
